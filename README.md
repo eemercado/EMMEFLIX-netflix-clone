@@ -1,6 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Fullstack Netflix Clone with React, NextJS, TailwindCSS & Prisma
 
-## Getting Started
+![image](https://res.cloudinary.com/dfuqlszkx/image/upload/v1708592395/Screen_Shot_2024-02-22_at_7.27.17_pm_axws9t.png)
 
 First, run the development server:
 
