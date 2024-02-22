@@ -2,9 +2,6 @@ import { NextPageContext } from "next";
 import { getSession, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useCallback } from "react";
-import { GetServerSidePropsContext } from "next";
-import { getServerSession } from "next-auth/next";
-import { authOptions } from "./api/auth/[...nextauth]";
 
 import useCurrentUser from "@/hooks/useCurrentUser";
 
@@ -20,21 +17,21 @@ const images = [
     name: string;
   }
 
-  export async function getServerSideProps(context: GetServerSidePropsContext) {
-    const session = await getServerSession(context.req, context.res, authOptions);
+export async function getServerSideProps(context: NextPageContext) {
+    const session = await getSession(context);
   
     if (!session) {
       return {
         redirect: {
-          destination: "/auth",
+          destination: '/auth',
           permanent: false,
-        },
-      };
+        }
+      }
     }
   
     return {
-      props: {},
-    };
+      props: {}
+    }
   }
 
   const UserCard: React.FC<UserCardProps> = ({ name }) => {
