@@ -1,6 +1,6 @@
 ## Fullstack Netflix Clone with React, NextJS, TailwindCSS & Prisma
 
-![image](https://res.cloudinary.com/dfuqlszkx/image/upload/v1708592395/Screen_Shot_2024-02-22_at_7.27.17_pm_axws9t.png)
+![image](https://res.cloudinary.com/dfuqlszkx/image/upload/v1708592645/Screen_Shot_2024-02-22_at_7.27.54_pm_vfyc0q.png)
 
 First, run the development server:
 
