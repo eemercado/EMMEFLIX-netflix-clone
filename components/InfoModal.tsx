@@ -76,4 +76,4 @@ const InfoModal: React.FC<InfoModalProps> = ({ visible, onClose }) => {
   );
 }
 
-export default InfoModal;
+export default InfoModal; 
