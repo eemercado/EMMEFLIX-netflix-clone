@@ -17,7 +17,7 @@ This is a repository for a FullStack Netflix Clone tutorial using React, NextJS,
 
 
 # Link:
-https://emmeflix-netflix-clone-iedghj5at-eemercados-projects.vercel.app/auth
+https://emmeflix-netflix-clone.vercel.app/auth
 
 username: test@gmail.com
 password: 123321
