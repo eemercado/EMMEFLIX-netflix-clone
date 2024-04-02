@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { FaLinkedin } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import { IoLogoVercel } from "react-icons/io5";
@@ -17,10 +17,28 @@ const videoSources = [
 
 const HomePage = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const nextVideoIndex = (currentVideoIndex + 1) % videoSources.length;
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const nextVideoRef = useRef<HTMLVideoElement | null>(null);
+
 
   const handleVideoEnd = () => {
-    setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % videoSources.length);
+    setCurrentVideoIndex(nextVideoIndex);
+    // Swap videos
+    if (videoRef.current && nextVideoRef.current) {
+      videoRef.current.src = nextVideoRef.current.src;
+      videoRef.current.load();
+      videoRef.current.play();
+    }
   };
+
+  useEffect(() => {
+    // Preload the next video
+    if (nextVideoRef.current) {
+      nextVideoRef.current.src = videoSources[nextVideoIndex];
+      nextVideoRef.current.load();
+    }
+  }, [nextVideoIndex]);
 
   return (
     <div style={{ height: '100vh', color: 'white', position: 'relative', overflow: 'hidden' }}>
@@ -36,7 +54,7 @@ const HomePage = () => {
         }} />
         
         <video
-          key={currentVideoIndex}
+          ref={videoRef}
           autoPlay
           loop={false}
           muted
@@ -53,6 +71,13 @@ const HomePage = () => {
           }}
         >
           <source src={videoSources[currentVideoIndex]} type="video/mp4" />
+        </video>
+
+        <video
+          ref={nextVideoRef}
+          style={{ display: 'none' }} // Hide the video element
+        >
+          <source src={videoSources[nextVideoIndex]} type="video/mp4" />
         </video>
 
   
