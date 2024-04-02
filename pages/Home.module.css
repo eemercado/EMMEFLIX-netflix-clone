@@ -1,0 +1,163 @@
+.homeWrapper {
+    font-family: 'PP Neue Montreal', sans-serif;
+    color: #fff; /* Default text color for all text inside homeWrapper */
+}
+
+.homeWrapper * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.homeWrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.homeWrapper p,
+.homeWrapper a {
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.homeWrapper nav {
+    position: fixed;
+    top: 0;
+    width: 99%; 
+    padding: 2em;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+}
+
+.homeWrapper nav > div {
+    flex: 1;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.shop {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2em;
+}
+
+.copy {
+    position: absolute;
+    top: 45%; /* Adjusted to 50% for vertical centering */
+    left: 0; /* Added to align the flex container to the left */
+    transform: translate(0, -50%); /* Adjusted for proper centering */
+    width: 100%;
+    padding: 2em;
+    display: flex; /* Use flexbox to layout child elements */
+    justify-content: space-between; /* Space out children to start and end */
+    align-items: center;
+    z-index: 2;
+}
+
+
+.homeWrapper footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 2em;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slideActive {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.slideNext {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slideNext .slideNextImg {
+    width: 250px;
+    height: 350px;
+    clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+}
+
+.sliderContent {
+    position: absolute;
+    left: 2em;
+    bottom: 0;
+    width: 100%;
+    height: 195px;
+    overflow: hidden;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.sliderContentActive {
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.sliderContentNext {
+    position: absolute;
+    top: 200px;
+    left: 0;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.homeWrapper h1 {
+    text-transform: uppercase;
+    font-family: "Timmons NY 2.005", sans-serif;
+    font-size: 150px;
+    font-weight: lighter;
+    color: #fff;
+}
+
+.homeWrapper h1 span {
+    position: relative;
+}
+
+.homeWrapper .logoImage {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+  }
+  
+  
+
+@media (max-width: 900px) {
+    .links,
+    .copy,
+    .homeWrapper footer {
+        display: none;
+    }
+
+    .homeWrapper h1 {
+        font-size: 50px;
+    }
+
+}
