@@ -6,12 +6,18 @@ import { IoLogoVercel } from "react-icons/io5";
 
 const videoSources = [
   "/videos/batman3.mp4",
+  "/videos/tangled2.mp4",
   "/videos/joker1.mp4",
+  "/videos/whiplash3.mp4",
   "/videos/joker2.mp4",
   "/videos/batman1.mp4",
+  "/videos/tangled3.mp4",
+  "/videos/whiplash1.mp4",
   "/videos/joker3.mp4",
   "/videos/batman4.mp4",
   "/videos/joker4.mp4",
+  "/videos/whiplash2.mp4",
+  "/videos/tangled1.mp4",
   "/videos/batman2.mp4",
 ];
 
